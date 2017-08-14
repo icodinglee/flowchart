@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=awiT5wRp0dNy9xP57UjlFqiqfR8D61vO&services=&t=20170803155555"></script>
+		<!--绘制矩形框-->
+		<script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+		<link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+		<!--加载工具提示信息窗口-->
+		<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.4/src/SearchInfoWindow_min.js"></script>
+		<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.4/src/SearchInfoWindow_min.css" />
+		<!--让所有的点都显示在地图中-->
+		<script type="text/javascript" src="http://api.map.baidu.com/library/AreaRestriction/1.2/src/AreaRestriction_min.js"></script>
+		<!--更改点的样式-->
+		<script type="text/javascript" src="http://lbsyun.baidu.com/jsdemo/data/points-sample-data.js"></script>
+
+		<script src="/dist/js/maliang.js"></script>
+		<script src="/webpack-dev-server.js"></script>
+		<style>
+			.BMapLib_Drawing .BMapLib_marker,.BMapLib_circle ,.BMapLib_polyline,.BMapLib_polygon ,.BMapLib_hander{
+				display: none;
+			}
+			.anchorBL{
+				display: none;
+			}
+			.BMap_Marker{
+				display: none;
+			}
+			span>div>img{
+				display: none !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root" style="width: 800px;height:400px;margin: auto"></div>
+		<div id="test" style="width: 800px;height:400px;margin: auto"></div>
+
+		<script type="text/javascript">
+			let m = new maliang('192.168.2.126');
+			m.bind('root', '5988193f7452340af7030ab6');
+		        m.bind('test', '598982357452341df057e3e3');
+			m.render();
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,38 @@
+import React from 'react';
+import { connect } from 'react-redux';
+class TreeMenu extends React.Component{
+    constructor(){
+        super();
+        this.onClickCallBack=this.onClickCallBack.bind(this);
+    }
+    onClickCallBack(index){
+        $('.'+index).slideToggle(500);
+    }
+    render(){
+        let _this=this;
+        let data=this.props.data1;
+        let Html=[];
+        Html=data&&data.map(function(item,index) {
+                return(
+                        <li key={index}>
+                            <a href="javascript:void(0)" onClick={_this.onClickCallBack.bind(this,index)} title="点击可收起或者展开可拖拽内容" >
+                                 {item.title}
+                            </a>
+                            {item.items.map(function (itemMenu,i) {
+                                return(                      
+                                       <p key={i} className={index} style={{cursor:"move"}} title="可拖拽至右边边框内" draggable="true" onDragEnd={_this.props.onDragStart1.bind(_this,itemMenu.type,itemMenu.text)}>{itemMenu.text}</p>
+                                )
+                            })}
+                        </li>
+                      )
+        })
+
+        return(<ul className="treeMenuUl">
+                 {Html}
+              </ul>)
+    }
+}
+function mapStateToProps(state) {
+    return state
+};
+export default connect(mapStateToProps)(TreeMenu);

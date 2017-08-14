@@ -1,0 +1,97 @@
+import React from 'react';
+import Modal from 'dev/components/modal';
+import SelectConfig from '../components/selectConfig.js';
+import MultiSelectConfig from '../components/MultiSelectConfig.js';
+// 假数据
+// let selectData1={
+//     dropdown:[{firstOption:'蔬菜',secondOption:['白菜1','茄子1'],thirdOption:['白菜2','茄子2'],fourthOption:['白菜3','茄子3']},
+//               {firstOption:'汽车',secondOption:['卡宴1','牧马人1'],thirdOption:['卡宴2','牧马人2'],fourthOption:['卡宴3','牧马人3']}]
+// }
+let selectData1={
+        dropdown:[{firstOption:'水果',
+                   OtherOptions:[
+                    {options:['苹果1','香蕉1']},
+                    {options:['苹果2','香蕉2']},
+                    {options:['苹果3','香蕉3']}]
+                  },
+            {firstOption:'汽车',
+                OtherOptions:[
+                    {options:['卡宴1','牧马人1']},
+                    {options:['卡宴2','牧马人2']},
+                    {options:['卡宴3','牧马人3']}]
+            }
+                 ]
+}
+class ConfigModal extends Modal {
+    constructor(){
+        super();
+        this.state={
+            showModal:true,
+        };
+        this.reset=this.reset.bind(this);
+        this.selectCallBack=this.selectCallBack.bind(this);
+    }
+    reset(){
+        this.setState({showModal:false})
+    }
+    save(){
+        alert('你点了保存按钮')
+    }
+    selectCallBack(params){
+        console.log(params)
+    }
+    render(){
+        return(
+            <div style={{position:'relative'}}>
+                <Modal isOpen={this.state.showModal}
+                       style={{
+                           overlay: {
+                               position: 'fixed',
+                               top: 0,
+                               left: 0,
+                               right: 0,
+                               bottom: 0,
+                               background:'rgba(0,0,0,.5)'
+                           },
+                           content: {
+                               position: 'absolute',
+                               top:'50%',
+                               left:'50%',
+                               transform: 'translate(-50%,-50%)',
+                               backgroundColor: 'white',
+                               width: '65%',
+                               height: '65%',
+                               overflow: 'auto',
+                               borderRadius: 5,
+                               outline: 'none',
+                               padding:0,
+                               borderWidth:0
+                           }
+                       }}
+                >
+                    <h4 style={{margin:0,backgroundColor:'#2ECC71',color:'white',textAlign:'center',height:40,padding:10}}>请配置相关信息</h4>
+                    <div style={{width:'100%',position:'absolute',bottom:50,top:40,overflow:'auto',padding:'20px 150px'}}>
+                       <SelectConfig label="配置项1" id="id1" selectData={selectData1} callBack={this.selectCallBack} />
+                       <SelectConfig label="配置项2" id="id2" selectData={selectData1} callBack={this.selectCallBack} />
+                       <MultiSelectConfig Data={selectData1} callBack={this.selectCallBack} />
+
+
+                    </div>
+                    <div style={{height:50,borderTop:'1px solid #7F8C8D', position:'absolute',bottom:0,
+                        width:'100%', display:'flex', justifyContent:'flex-end', alignItems:'center',
+                        paddingRight:70,color:'white'}}>
+                        <button type="submit" onClick={this.reset}
+                        style={{padding:'5px 16px 5px 16px',backgroundColor:'#E74C3C',borderWidth:0,borderRadius:4,marginRight:20}}
+                        >取消</button>
+                        <button type="submit" onClick={this.save}
+                        style={{padding:'5px 16px 5px 16px',backgroundColor:'#2ECC71',borderWidth:0,borderRadius:4}}
+                        >保存</button>
+                    </div>
+                </Modal>
+            </div>
+        )
+    }
+
+
+};
+export default ConfigModal;

@@ -1,0 +1,15 @@
+.dashboardForm{
+	width: 400px;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #ddd;
+}
+
+.popup{
+	width: 100px;
+	height: 100px;
+	border: 2px solid #ddd;
+}

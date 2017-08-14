@@ -1,0 +1,130 @@
+.bigpopup{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height:100%;
+    z-index: 10000;
+    background-color:rgba(0,0,0,.5);
+}
+.smallAlert{
+    width: 55%;
+    height: 410px;
+    background-color:white;
+    margin: auto;
+    border-radius: 4px;
+    margin-top: 60px;
+}
+h4{
+    font-style: normal;
+    background-color: #3498DB;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: white;
+    text-align: center;
+    line-height: 45px;
+}
+.smallAlert>ul{
+    height:300px;
+    overflow-y: auto;
+    padding: 8px 15px;
+    border-bottom: 1px solid #CCCCCC;
+}
+.smallAlert>ul li>div{
+    border:1px solid #BDC3C7;
+    border-radius: 6px;
+    margin: 20px;
+    padding:0px 0px 20px;
+}
+.switchway{
+    float: right;
+}
+.smallAlert>ul li>div em {
+    font-style: normal;
+    float: right;
+    margin-right: 20px;
+}
+.smallAlert>ul li>div h5{
+    background-color: #ECF0F1;
+    padding: 6px;
+    margin-top: 0;
+}
+.smallAlert>ul li>div i {
+    font-style: normal;
+    margin-left: 20px;
+}
+.smallAlert>ul li{
+    margin: 10px 0;
+}
+.smallAlert>div{
+    text-align: right;
+}
+.smallAlert>div>button{
+    margin: 0px 20px 0px 10px;
+    padding:6px 15px;
+    background-color: rgba(0, 188, 212, 0.8);
+    border-radius: 3px;
+    border-width: 0;
+    color: white;
+    font-size: 16px;
+}
+.smallAlert>div>button.set {
+    background-color: rgba(255, 64, 129, 0.8);
+}
+.smallAlert>div>button.set:hover {
+    background-color: rgba(255, 64, 129, 1);
+}
+.smallAlert>div>button.cancle:hover {
+    background-color: rgba(0, 188, 212, 1);
+}
+.input-group ::-webkit-input-placeholder{color:black;}
+.input-group ::-moz-placeholder{color:black;}
+.input-group ::-moz-placeholder{color:black;}
+.input-group input{
+color: black
+}
+.multiSpan{
+    border-radius: 100px;
+    background-color: #BDC3C7;
+    padding:5px 10px;
+    color: white;
+}
+.multiSpan>a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+.btnArea{
+    display: flex;
+}
+.btnleft{
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+}
+.btnleft button{
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: #D35400;
+    color: white;
+    font-size: 15px;
+    border-width: 0px;
+}
+.btnright {
+    flex-grow: 1;
+    border-left: 1px solid #CCCCCC;
+    padding: 17px;
+}
+.btnright button{
+    padding: 2px 15px;
+    /*border-radius: 95px;*/
+    background-color: #2ECC71;
+    /*background-color: white;*/
+    color: white;
+    /*color: black;*/
+    margin-right: 12px;
+    border: 1px solid #2ECC71;
+    outline: none;
+}
+

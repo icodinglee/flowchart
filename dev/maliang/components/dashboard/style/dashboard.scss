@@ -1,0 +1,160 @@
+@import 'mixin';
+body{
+    background-color: #e8e8e8;
+}
+.dashboardForm {
+	// position: relative;
+	@include center-children;
+	.mask{
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #000;
+		@include opacity(60);
+		@include size(100%, 100%);
+	}
+    
+    > .formContent {
+    	background-color: #fff;
+        font-size: $baseFontSize;
+        width: 400px;
+        border: $border;
+        @include center;
+        height: auto;
+        @include border-radius(5px);
+        @include box-sizing(border-box);
+        > .closeForm{
+        	position: absolute;
+        	top: 5px;
+        	right: 10px;
+        	font-style: normal;
+        	cursor: pointer;
+        }
+        > p {
+            font-size: 18px;
+            margin-bottom: 0;
+            padding-bottom: 1em;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        > label {
+            line-height: 2rem;
+            display: block;
+            text-indent: 1rem;
+            > p {
+                margin-bottom: 0;
+            }
+            > input{
+                padding: 0px 2px 1px;
+                @include box-sizing(border-box);
+            }
+            > input, select {
+                // line-height: 1rem;
+                margin-left: 1rem;
+                @include size(90%, 30px);
+            }
+            &:nth-last-of-type(1){
+            	border-bottom: 1px solid #ddd;
+            	padding-bottom: 1rem;
+            }
+        }
+        > .btngroup {
+            width: 90%;
+            text-align: right;
+            > button {
+                line-height: 2rem;
+                display: inline-block;
+                margin: 10px 5px;
+                padding: 0 10px;
+                cursor: pointer;
+                text-align: center;
+                color: #333;
+                border: 1px solid transparent;
+                @include size(65px, 2rem);
+                @include border-radius(4px);
+            }
+        }
+        .saveForm {
+            border-color: #2e6da4;
+            background-color: #337ab7;
+        }
+        .cancelForm {
+            border-color: #ccc;
+            background-color: #ccc;
+        }
+    }
+}
+.btnList{
+    width: 100%;
+    width: 100%;
+    height: 45px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #29ccdc;
+    button{
+        width: 50px;
+        vertical-align: middle;
+        background-color: #1856bf;
+        border-color: #1856bf;
+        box-shadow: 1px 2px 2px 2px;
+        color: #fff;
+        font-size: 16px;
+        margin-right: 10px;
+        padding: 3px;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+    }
+}
+//拖拽框样式
+.dragbox{
+    @include box-sizing(border-box);
+    // position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    display: block;
+    padding: 1px .5rem;
+    text-align: center;
+}
+.chartArea{
+    @include size(100%,500px);
+    // width: 100%;
+    // height: 500px;
+    margin-top: 10px;
+    min-height: 500px;
+}
+
+// 右键菜单样式
+
+.react-contextmenu{
+    min-width: 100px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 16px;
+    color: #373a3c;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease !important;
+    z-index: 2;
+    .react-contextmenu-item {
+        padding: 3px 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #373a3c;
+        text-align: inherit;
+        white-space: nowrap;
+        background: 0 0;
+        border: 0;
+        cursor: pointer;
+        &:hover{
+            background-color: #85aff7;
+            color: #fff;
+        }
+    }   
+}

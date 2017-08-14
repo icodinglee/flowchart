@@ -1,0 +1,151 @@
+
+.group-container {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor:move;
+    border:1px solid  #2e6f9a;
+    opacity: 0.9;
+    transition: background-color 0.35s,opcity 0.35s;
+    -moz-transition: background-color 0.35s,opcity 0.35s;
+    -webkit-transition: background-color 0.35s,opcity 0.35s;
+}
+
+.group-container:hover{
+  background-color: #5c96bc;
+  opacity: 1
+}
+
+.group-container:hover .title{
+  color:#fff;
+  background-color:#5C96BC;
+  font-weight: normal;
+  opacity: 1
+}
+
+.group-container ul {
+    margin-left:25px;
+    padding: 0;
+}
+
+.group-container ul li {
+    list-style-type:circle;
+    margin-bottom: 7px;
+}
+
+.large {
+    width:600px;
+    height:600px;
+}
+
+.group-container.collapsed {
+    height:40px;
+}
+
+.title {
+    text-align:center;
+    background-color:transparent;
+    border-bottom:1px solid  #2e6f9a;
+    font-size:13px;
+    line-height: 30px;
+    color:#333;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition:all 0.35s ;
+    -webkit-transition:all 0.35s ;
+    -moz-transition:all 0.35s ;
+}
+
+
+
+#container1 { left:20px;top:50px; }
+#container2 { left:250px;top:50px; }
+#container3 { left:480px;top:50px; }
+#container4 { left:710px;top:50px; }
+#container5 { left:600px;top:340px; }
+#container6 { left:370px;top:340px; }
+#container7 { left:140px;top:340px; }
+
+.del, .node-collapse {
+    position:absolute;
+    top:5px;
+    right:5px;
+    background-color:white;
+    padding:1px;
+    cursor:pointer;
+    font-size:13px;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    text-align:center;
+    display:block;
+}
+
+.del:after {
+    content:"X";
+}
+
+.node-collapse {
+    right:29px;
+    text-align: center;
+}
+
+.node-collapse:after {
+    content:"-";
+}
+
+.group-container.collapsed .node-collapse:after {
+    content:"+";
+}
+
+.del[delete-all] {
+    background-color: pink;
+}
+
+
+.jtk-group-collapsed .w, .jtk-group-collapsed ul, .jtk-group-collapsed .container, .jtk-group-collapsed .name {
+    display:none;
+}
+
+.jtk-drag-hover {
+    outline:4px solid cornflowerblue;
+}
+
+.katavorio-ghost-proxy {
+    outline:2px solid red;
+}
+
+.events {
+    position:absolute;
+    right:0;
+    top:0;
+    border-left:4px solid #58775d;
+    bottom:0;
+    width:156px;
+    font-size: 11px;
+    padding-left:11px;
+    background-color: white;
+}
+
+#events {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 1px solid #58775d;
+    bottom: 0;
+    width: 256px;
+    font-size: 11px;
+    padding-left: 11px;
+    background-color: white;
+}
+
+.events h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.dragHover {
+    border: 2px solid orange;
+}

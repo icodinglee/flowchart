@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>代码测试</title>
+
+    
+	</head>
+	<body>
+		<div id="root"></div>
+  
+                <% for(var i=0; i<htmlWebpackPlugin.options.filenames.length; i++) { %>
+                   <% var filename = htmlWebpackPlugin.options.filenames[i] %>
+                   <a href=/dist/<%= filename %>><%= filename %></a>
+                   <br>
+                <% } %>
+
+		<script src="/webpack-dev-server.js"></script>
+	</body>
+</html>

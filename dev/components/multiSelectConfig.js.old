@@ -1,0 +1,50 @@
+import React from 'react';
+// Data是要传入的数据
+// callBack可以传选择的数据给父级
+class MultiSelectConfig extends React.Component{
+    constructor(){
+        super();
+        this.state={
+            SelectIndex1:0
+        };
+        this.selectChange1=this.selectChange1.bind(this);
+    }
+    selectChange1(event){
+        let arr1=(event.target.value).split(';')
+        this.setState({
+            SelectIndex1:arr1[0],
+        })
+        this.props.callBack({selectValue1:arr1[1]});
+    }
+
+    render() {
+        return(
+            <span>
+                 {/*第一个选项，后面的选项都是根据它的变化而变化的*/}
+                <select onChange={this.selectChange1}>
+                             <option value=''>请选择</option>
+                    {this.props.Data.dropdown.map((items,index) => {
+                        return (<option value={index+';'+items.firstOption} key={index}>{items.firstOption}</option>)
+                    })
+                    }
+                           </select>
+
+
+                {
+                    this.props.Data.dropdown[this.state.SelectIndex1].OtherOptions.map((items)=>{
+                        return ( <select>
+                            <option value=''>请选择</option>
+                            {items.options.map((item,index2) => {
+                                return (<option value={item} key={index2}>{item}</option>)
+                            })
+                            }
+                        </select>)
+                    })
+                }
+            </span>
+        )
+
+    }
+
+};
+export default MultiSelectConfig;
